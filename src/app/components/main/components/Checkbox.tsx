@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { Dispatch, useState } from "react";
 
 type PropsTypes = {
   label: string;
   value: boolean;
-  id: string
+  id: string;
+  dispatch: Dispatch<boolean>;
+  state: boolean;
 };
 
-export default function Checkbox({ value, label, id }: PropsTypes) {
+export default function Checkbox({ value, label, id, dispatch, state }: PropsTypes) {
   const [isChecked, setIsChecked] = useState(value);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+    dispatch(!state)
   };
   return (
     <div className="m-3 inline-block">
