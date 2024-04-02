@@ -7,7 +7,7 @@ export default function About() {
         Created with Next.js, Tailwind and Gamepad API.
       </p>
       <p className="text-gray-200">
-        For more info, visit the <a className="text-orange-400 underline">Repository >>></a>.
+        For more info, visit the <a className="text-orange-400 underline">Repository &gt;&gt;&gt;</a>.
       </p>
     </div>
   );
