@@ -2,11 +2,13 @@ import React from "react";
 
 type PropTypes = {
   side: string;
+  value: number;
 };
 
-export default function ShoulderTopButton({ side }: PropTypes) {
+export default function ShoulderTopButton({ side,value }: PropTypes) {
   return (
     <div
+      style={{ backgroundColor: `rgb(209 213 219/ ${value})` }}
       className={`
       border-4
     border-gray-300
