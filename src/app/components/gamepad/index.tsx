@@ -3,12 +3,11 @@ import Image from "next/image";
 import React from "react";
 import AxesGraphic from "./AxesGraphic";
 
-export default function Gamepad() {
+function GamepadBaseAndHighlight() {
   const getbuttons = useGetButtons(useGamepadConnected());
   const bt = getbuttons?.buttons || [];
-
   return (
-    <div className="w-[1000px] h-[1000px] relative border-gray-50">
+    <div>
       <Image
         className="absolute"
         src={"/gamepad-base.png"}
@@ -104,7 +103,15 @@ export default function Gamepad() {
         objectFit="cover"
         fill={true}
       />
+    </div>
+  );
+}
 
+export default function Gamepad() {
+
+  return (
+    <div className="w-[1000px] h-[1000px] relative border-gray-50">
+      <GamepadBaseAndHighlight />
       <div className="absolute top-[358px] left-[267px]">
         <AxesGraphic />
       </div>
