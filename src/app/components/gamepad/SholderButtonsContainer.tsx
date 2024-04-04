@@ -1,10 +1,10 @@
 import React from "react";
 import ShoulderBottomButton from "./SholderBottomButton";
 import ShoulderTopButton from "./ShoulderTopButton";
-import { useGamepadConnected, useGetButtons } from "@/app/api/gamepadApi";
+import { useGamepad } from "@/app/api/gamepadApi";
 
 export default function SholderButtonsContainer() {
-  const getbuttons = useGetButtons(useGamepadConnected());
+  const getbuttons = useGamepad();
 
   return (
     <div className="flex justify-between w-[600px]">

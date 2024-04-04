@@ -1,10 +1,10 @@
-import { useGamepadConnected, useGetButtons } from "@/app/api/gamepadApi";
+import { useGamepad } from "@/app/api/gamepadApi";
 import Image from "next/image";
 import React from "react";
 import AxesGraphic from "./AxesGraphic";
 
 function GamepadBaseAndHighlight() {
-  const getbuttons = useGetButtons(useGamepadConnected());
+  const getbuttons = useGamepad();
   const bt = getbuttons?.buttons || [];
   return (
     <div>

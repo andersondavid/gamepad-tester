@@ -9,14 +9,14 @@ import AboutMe from "./components/main/AboutMe";
 import BottonsFeed from "./components/main/components/BottonsFeed";
 import SholderButtonsContainer from "./components/gamepad/SholderButtonsContainer";
 
-import { useGamepadConnected } from "./api/gamepadApi";
+import { useGamepad } from "./api/gamepadApi";
 
 export default function Home() {
-  const gamepad = useGamepadConnected();
+  const gamepad = useGamepad();
   const [gamepadOnline, setGamepadOnline] = useState<boolean>(false);
 
   useEffect(() => {
-    if (gamepad != false) {
+    if (gamepad != null) {
       setGamepadOnline(true);
     } else {
       setGamepadOnline(false);
@@ -46,9 +46,9 @@ export default function Home() {
       <div className="fixed bottom-0 left-0">
         <AboutMe />
       </div>
-      {gamepadOnline && <div className="fixed right-0 top-28">
+      <div className="fixed right-0 top-28">
         <BottonsFeed />
-      </div>} 
+      </div>
     </main>
   );
 }

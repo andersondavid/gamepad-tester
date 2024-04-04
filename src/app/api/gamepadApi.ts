@@ -4,13 +4,22 @@ function useGamepadConnected() {
   const [isGamepadConnected, setGamepadConnected] = useState<
     GamepadEvent | boolean
   >(false);
+
+  return isGamepadConnected;
+}
+
+function useGamepad() {
+  const [isGamepadConnected, setGamepadConnected] =
+    useState<GamepadEvent | null>(null);
+  const [gamepadInstance, setGamepadInstance] = useState<Gamepad | null>(null);
+
   useEffect(() => {
     function handleGamepadConnected(e: GamepadEvent) {
       setGamepadConnected(e);
-      console.log("connected");
+      console.log("connected", e);
     }
     function handleGamepadDesconnected() {
-      setGamepadConnected(false);
+      setGamepadConnected(null);
       console.log("desconnected");
     }
     window.addEventListener("gamepadconnected", handleGamepadConnected);
@@ -22,22 +31,26 @@ function useGamepadConnected() {
     };
   }, []);
 
-  return isGamepadConnected;
-}
-
-function useGetButtons(isGamepadConnected: GamepadEvent | boolean) {
-  const [gamepadState , setGamepadState] = useState<(Gamepad | null)>()
   useEffect(() => {
+    let intervalId: NodeJS.Timeout;
 
-    const intervalId = setInterval(() => {
-      setGamepadState(navigator.getGamepads()[0]);
-    }, 15);
-    
-    return () => clearInterval(intervalId);
+    if (isGamepadConnected) {
+      intervalId = setInterval(() => {
+        setGamepadInstance(
+          navigator.getGamepads()[isGamepadConnected.gamepad.index]
+        );
+      }, 15);
+    } else {
+      setGamepadInstance(null);
+    }
+
+    return () => {
+      clearInterval(intervalId);
+      setGamepadInstance(null);
+    };
   }, [isGamepadConnected]);
 
-  return gamepadState
-
+  return gamepadInstance;
 }
 
-export { useGamepadConnected, useGetButtons };
+export { useGamepadConnected, useGamepad };
