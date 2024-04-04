@@ -12,14 +12,14 @@ export default function BottonsFeed() {
 
   return (
     <div className="w-32">
-      <p className="text-gray-200 w-32 text-xl border-l-2 border-l-gray-700 w-16 pl-2 pb-1">
+      <p className="text-gray-200 text-xl border-l-2 border-l-gray-700 pl-2 pb-1">
         Buttons{" "}
         <span className="text-xs">{`(${getbuttons?.buttons.length})`}</span>
       </p>
       {getbuttons?.buttons.map((button, i) => (
         <ButtonItem key={"B" + i} index={i} value={button.value} />
       ))}
-      <p className="text-gray-200 w-32 text-xl border-l-2 border-l-gray-700 w-16 pl-2 pb-1 mt-2">
+      <p className="text-gray-200 text-xl border-l-2 border-l-gray-700 pl-2 pb-1 mt-2">
         Axes <span className="text-xs">{`(${getbuttons?.axes.length})`}</span>
       </p>
       {getbuttons?.axes.map((axes, i) => (
