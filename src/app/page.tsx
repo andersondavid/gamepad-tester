@@ -19,7 +19,6 @@ export default function Home() {
   const [showButtonsFeed, setShowButtonsFeed] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(gamepad);
     if (gamepad != false) {
       setGamepadOnline(true);
     } else {
@@ -27,9 +26,7 @@ export default function Home() {
     }
   }, [gamepad]);
 
-  useEffect(() => {
-    console.log(showButtonsFeed, "feed");
-  }, [showButtonsFeed]);
+  useEffect(() => {}, [showButtonsFeed]);
 
   return (
     <main className="relative">
@@ -59,13 +56,9 @@ export default function Home() {
       <div className="fixed bottom-0 left-0">
         <AboutMe />
       </div>
-      <div
-        className={`fixed right-0 top-28 ${
-          showButtonsFeed ? "block" : "hidden"
-        }`}
-      >
+      {showButtonsFeed && <div className="fixed right-0 top-28">
         <BottonsFeed />
-      </div>
+      </div>} 
     </main>
   );
 }

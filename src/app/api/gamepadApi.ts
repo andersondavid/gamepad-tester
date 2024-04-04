@@ -31,7 +31,7 @@ function useGetButtons(isGamepadConnected: GamepadEvent | boolean) {
 
     const intervalId = setInterval(() => {
       setGamepadState(navigator.getGamepads()[0]);
-    }, 60);
+    }, 15);
     
     return () => clearInterval(intervalId);
   }, [isGamepadConnected]);

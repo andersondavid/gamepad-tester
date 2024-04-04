@@ -5,7 +5,6 @@ import { useGamepadConnected, useGetButtons } from "@/app/api/gamepadApi";
 
 export default function SholderButtonsContainer() {
   const getbuttons = useGetButtons(useGamepadConnected());
-  console.log(getbuttons?.buttons[6].value);
 
   return (
     <div className="flex justify-between w-[600px]">
