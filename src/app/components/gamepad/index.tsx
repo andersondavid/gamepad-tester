@@ -108,15 +108,16 @@ function GamepadBaseAndHighlight() {
 }
 
 export default function Gamepad() {
+  const gamepad = useGamepad()
 
   return (
     <div className="w-[1000px] h-[1000px] relative border-gray-50">
       <GamepadBaseAndHighlight />
       <div className="absolute top-[358px] left-[267px]">
-        <AxesGraphic />
+        <AxesGraphic y={gamepad?.axes[1] || 0} x={gamepad?.axes[0] || 0} />
       </div>
       <div className="absolute top-[496px] left-[621px]">
-        <AxesGraphic />
+        <AxesGraphic y={gamepad?.axes[3] || 0} x={gamepad?.axes[2] || 0}  />
       </div>
     </div>
   );
