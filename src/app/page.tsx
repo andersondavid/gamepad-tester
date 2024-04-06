@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import Gamepad from "./components/gamepad";
 import Header from "./components/header";
-import Headline from "./components/main/Headline";
 import AboutMe from "./components/main/AboutMe";
 import BottonsFeed from "./components/main/components/BottonsFeed";
 import SholderButtonsContainer from "./components/gamepad/SholderButtonsContainer";
@@ -26,17 +25,10 @@ export default function Home() {
   return (
     <main className="relative">
       <Header />
-      <div className="fixed top-0 left-0 w-full h-full flex justify-center">
-        <Headline />
-      </div>
-      <div
-        className={`fixed ${
-          gamepadOnline ? "bottom-0" : "bottom-[-30%]"
-        } left-1/2 -translate-x-1/2 duration-1000`}
-      >
+      <div className={`fixed left-1/2 -translate-x-1/2 duration-1000`}>
         <Gamepad />
         <div
-          className={`fixed top-4 left-1/2 -translate-x-1/2 duration-1000 ${
+          className={`fixed left-1/2 top-4 -translate-x-1/2 duration-1000 ${
             gamepadOnline ? "opacity-100" : "opacity-0"
           }`}
         >
