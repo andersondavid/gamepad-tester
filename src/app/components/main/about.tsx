@@ -1,14 +1,29 @@
+import Image from "next/image";
 import React from "react";
 
 export default function About() {
   return (
-    <div className="w-48">
-      <p className="text-gray-200 mb-2">
-        Created with Next.js, Tailwind and Gamepad API.
+    <div className="w-96">
+      <p className="border-b-4 border-orange-400 bg-zinc-800 py-6 px-10 text-justify text-gray-200">
+        The &quot;Gamepad Tester&quot; app has been designed to enable users to
+        test the functionality of their gamepads across various devices,
+        ensuring that the controls are in perfect condition for an optimal
+        gaming experience.
       </p>
-      <p className="text-gray-200">
-        For more info, visit the <a className="text-orange-400 underline">Repository &gt;&gt;&gt;</a>.
-      </p>
+      <div className="m-auto text-right py-4">
+        <button className="inline-block rounded-full border-2 border-orange-400 px-2 py-2 text-gray-200">
+          <span className="px-2">GITHUB</span>
+          <span>
+            <Image
+              src={"/icons/github.png"}
+              className="ml-4 inline-block"
+              alt=""
+              width="35"
+              height="35"
+            />
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
