@@ -1,45 +1,27 @@
 "use client";
-
-import { useEffect, useState } from "react";
-
-import Gamepad from "./components/gamepad";
+import Gamepad from "./components/gamepad/Gamepad";
 import Header from "./components/header";
-import AboutMe from "./components/main/AboutMe";
+import About from "./components/main/About";
+import MakeWith from "./components/main/MakeWith";
 import BottonsFeed from "./components/main/components/BottonsFeed";
-import SholderButtonsContainer from "./components/gamepad/SholderButtonsContainer";
-
-import { useGamepad } from "./api/gamepadApi";
 
 export default function Home() {
-  const gamepad = useGamepad();
-  const [gamepadOnline, setGamepadOnline] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (gamepad != null) {
-      setGamepadOnline(true);
-    } else {
-      setGamepadOnline(false);
-    }
-  }, [gamepad]);
-
   return (
-    <main className="relative">
-      <Header />
-      <div className={`fixed left-1/2 -translate-x-1/2 duration-1000`}>
+    <main className="relative w-screen h-screen">
+      <div className="fixed w-full">
+        <Header />
+      </div>
+      <div className="absolute left-1/2 -translate-x-1/2">
         <Gamepad />
-        <div
-          className={`fixed left-1/2 top-4 -translate-x-1/2 duration-1000 ${
-            gamepadOnline ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <SholderButtonsContainer />
-        </div>
       </div>
-      <div className="fixed bottom-0 left-0">
-        <AboutMe />
+      <div className="absolute right-[15%] top-1/3">
+        <About />
       </div>
-      <div className="fixed right-0 top-28">
+      <div className="fixed left-14 top-28">
         <BottonsFeed />
+      </div>
+      <div className="fixed bottom-0 right-0">
+        <MakeWith />
       </div>
     </main>
   );
