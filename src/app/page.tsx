@@ -11,7 +11,7 @@ export default function Home() {
       <div className="fixed w-full">
         <Header />
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-0">
         <Gamepad />
       </div>
       <div className="absolute right-[15%] top-1/3">
