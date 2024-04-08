@@ -4,15 +4,42 @@ import AxesGraphic from "./AxesGraphic";
 import { GamepadBaseAndHighlight } from "./GamepadBaseAndHighlight";
 import SholderButtonsContainer from "./SholderButtonsContainer";
 
+interface Controllers {
+  [key: string]: string;
+}
+
+function getConsole(controllerName: string): string {
+  const controllers: Controllers = {
+    "xbox 360": "Xbox 360",
+    "xbox one": "Xbox One",
+    ps4: "PlayStation 4",
+    "pro controller": "Nintendo Switch",
+  };
+
+  controllerName = controllerName.toLowerCase();
+
+  for (let controller in controllers) {
+    if (controllerName.includes(controller)) {
+      return controllers[controller];
+    }
+  }
+
+  return "Console not found";
+}
+
 export default function Gamepad() {
   const gamepad = useGamepad();
   const [gamepadOnline, setGamepadOnline] = useState<boolean>(false);
+  const [gamepadInfo, setGamepadInfo] = useState<Gamepad | undefined>();
 
   useEffect(() => {
     if (gamepad != null) {
       setGamepadOnline(true);
+      setGamepadInfo(gamepad);
+      console.log(gamepad);
     } else {
       setGamepadOnline(false);
+      setGamepadInfo(undefined);
     }
   }, [gamepad]);
 
@@ -41,10 +68,10 @@ export default function Gamepad() {
           gamepadOnline ? "pb-[25%] opacity-100" : "pb-[15%] opacity-0"
         }`}
       >
-        <h1 className="text-4xl font-bold">Xbox 360 Controller</h1>
-        <h1 className="text-2xl">
-          Xbox 360 Controller (XInput STANDARD GAMEPAD)
+        <h1 className="text-4xl font-bold">
+          {getConsole(gamepadInfo?.id || "none")}
         </h1>
+        <h1 className="text-2xl">{gamepadInfo?.id}</h1>
         <table>
           <thead>
             <tr>
@@ -56,13 +83,18 @@ export default function Gamepad() {
           </thead>
           <tbody>
             <tr className="text-orange-500">
-              <td>0</td>
-              <td>true</td>
-              <td>standard</td>
-              <td>12.234234</td>
+              <td>{gamepadInfo?.index}</td>
+              <td>{gamepadInfo?.connected + ""}</td>
+              <td>{gamepadInfo?.mapping}</td>
+              <td>{gamepadInfo?.timestamp.toFixed(4)}</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <div
+        className={`absolute bottom-1/4 w-full text-center duration-100 ${gamepadOnline ? "opacity-0" : "opacity-100"}`}
+      >
+        <h3 className="text-2xl italic text-gray-400">Press any key..</h3>
       </div>
     </div>
   );
