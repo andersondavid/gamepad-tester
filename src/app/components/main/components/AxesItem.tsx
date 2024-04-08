@@ -9,9 +9,9 @@ export default function ButtonItem({ index, value }: PropTypes) {
   let numberFloat = value.toFixed(4);
 
   return (
-    <div className="block w-32 border-l-2 border-l-gray-700 pl-2">
-      <p className="text-base -mb-2 text-gray-400 font-monospace">A{index}</p>
-      <p className="text-xl text-gray-200 font-monospace">{numberFloat}</p>
+    <div className="inline-block w-32 border-l-2 border-l-gray-700 pl-2 lg:block">
+      <p className="-mb-2 font-monospace text-base text-gray-400">A{index}</p>
+      <p className="font-monospace text-xl text-gray-200">{numberFloat}</p>
     </div>
   );
 }

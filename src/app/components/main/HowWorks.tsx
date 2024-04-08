@@ -2,11 +2,18 @@ import React from "react";
 
 export default function HowWorks() {
   return (
-    <div className="px-10 border-b-4 border-orange-400 bg-zinc-800 py-6 text-justify text-gray-200 h-fit w-96">
+    <div className="h-fit w-full border-b-4 border-orange-400 bg-zinc-800 px-10 py-6 text-justify text-gray-200 lg:w-96">
       <p className="pb-3">
         When connected, this tool displays the current state of your gamepads,
-        inputs, joysticks, and anything else that can be reported by the 
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API" className="text-orange-400"> HTML5 Gamepad Api</a>.
+        inputs, joysticks, and anything else that can be reported by the
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API"
+          className="text-orange-400"
+        >
+          {" "}
+          HTML5 Gamepad Api
+        </a>
+        .
       </p>
 
       <p className="pb-3">

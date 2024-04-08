@@ -12,8 +12,8 @@ export default function ShoulderTopButton({ side,value }: PropTypes) {
       className={`
       border-4
     border-gray-300
-      w-36
-      h-14
+      w-[100%]
+      h-[30%]
       rounded-tl-[100%]
       rounded-tr-2xl
       rounded-br-md

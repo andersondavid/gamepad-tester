@@ -2,13 +2,19 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="flex justify-between m-auto">
-      <div className="p-8">
-        <h2 className="text-white text-3xl font-bold">GAMEPAD TESTER</h2>
+    <div className="m-auto flex justify-between">
+      <div className=" p-2 lg:p-8">
+        <h2 className="text-xl font-bold text-white lg:text-3xl">
+          GAMEPAD TESTER
+        </h2>
       </div>
-      <div className="">
-        <a href="#" className="text-gray-200 p-8 inline-block">GITHUB</a>
-        <a href="#" className="text-gray-200 p-8 inline-block">LINKEDIN</a>
+      <div className="text-right">
+        <a href="#" className="inline-block p-2 text-gray-200 lg:p-8">
+          GITHUB
+        </a>
+        <a href="#" className="inline-block p-2 text-gray-200 lg:p-8">
+          LINKEDIN
+        </a>
       </div>
     </div>
   );

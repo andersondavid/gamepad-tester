@@ -10,7 +10,7 @@ export default function BottonsFeed() {
   return (
     <>
       {getbuttons && (
-        <div className="w-32">
+        <div className="lg:w-32 p-6">
           <p className="text-gray-200 text-xl border-l-2 border-l-gray-700 pl-2 pb-1">
             Buttons{" "}
             <span className="text-xs">{`(${getbuttons?.buttons.length})`}</span>

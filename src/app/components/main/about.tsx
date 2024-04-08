@@ -3,7 +3,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="w-96">
+    <div className="lg:w-96 w-full">
       <div className="border-b-4 border-orange-400 bg-zinc-800 px-10 py-6 text-justify text-gray-200">
         <p>
           The &quot;Gamepad Tester&quot; app has been designed to enable users
