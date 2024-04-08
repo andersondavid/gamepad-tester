@@ -15,9 +15,9 @@ export default function Home() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
         <Gamepad />
       </div>
-      <div className="absolute top-1/3 flex w-full justify-around">
-        <HowWorks />
+      <div className="absolute top-1/3 flex w-full justify-between px-[10%]">
         <About />
+        <HowWorks />
       </div>
       <div className="fixed left-14 top-28">
         <BottonsFeed />
