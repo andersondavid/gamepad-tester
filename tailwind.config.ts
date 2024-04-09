@@ -8,7 +8,6 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      'impact': ['Impact'],
       'monospace': ['monospace']
     }
   },

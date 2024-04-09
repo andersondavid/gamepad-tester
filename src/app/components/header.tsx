@@ -9,10 +9,16 @@ export default function Header() {
         </h2>
       </div>
       <div className="text-right">
-        <a href="https://github.com/andersondavid/" className="inline-block p-2 text-gray-200 lg:p-8">
+        <a
+          href="https://github.com/andersondavid/"
+          className="inline-block p-2 text-gray-200 lg:p-8"
+        >
           GITHUB
         </a>
-        <a href="https://www.linkedin.com/in/andersondaviddev/" className="inline-block p-2 text-gray-200 lg:p-8">
+        <a
+          href="https://www.linkedin.com/in/andersondaviddev/"
+          className="inline-block p-2 text-gray-200 lg:p-8"
+        >
           LINKEDIN
         </a>
       </div>

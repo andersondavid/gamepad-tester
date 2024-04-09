@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
 
-function useGamepadConnected() {
-  const [isGamepadConnected, setGamepadConnected] = useState<
-    GamepadEvent | boolean
-  >(false);
-
-  return isGamepadConnected;
-}
-
 function useGamepad() {
   const [isGamepadConnected, setGamepadConnected] =
     useState<GamepadEvent | null>(null);
@@ -53,4 +45,4 @@ function useGamepad() {
   return gamepadInstance;
 }
 
-export { useGamepadConnected, useGamepad };
+export { useGamepad };

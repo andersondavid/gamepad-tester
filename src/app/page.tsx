@@ -1,5 +1,5 @@
 "use client";
-import Gamepad from "./components/gamepad/Gamepad";
+import Gamepad from "./components/main/components/gamepad/Gamepad";
 import Header from "./components/header";
 import About from "./components/main/About";
 import AboutGamepad from "./components/main/AboutGamepad";

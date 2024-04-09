@@ -41,7 +41,7 @@ export default function Gamepad() {
   }, [gamepad]);
 
   return (
-    <div className="relative h-[450px] w-[450px] lg:h-[720px] lg:w-[720px] border-gray-50">
+    <div className="relative h-[450px] w-[450px] border-gray-50 lg:h-[720px] lg:w-[720px]">
       <div
         className={`duration-1000 ${
           gamepadOnline ? "pt-[0%] opacity-100" : "pt-[15%] opacity-0"
@@ -51,12 +51,12 @@ export default function Gamepad() {
       </div>
       <GamepadBaseAndHighlight />
       <div
-        className={`h-14 w-14 lg:h-32 lg:w-32 absolute left-[26.68%] top-[35.78%] origin-top-left duration-1000 ${gamepadOnline ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
+        className={`absolute left-[26.68%] top-[35.78%] h-14 w-14 origin-top-left duration-1000 lg:h-32 lg:w-32 ${gamepadOnline ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
       >
         <AxesGraphic y={gamepad?.axes[1] || 0} x={gamepad?.axes[0] || 0} />
       </div>
       <div
-        className={`h-14 w-14 lg:h-32 lg:w-32 absolute left-[62.08%] top-[49.58%] origin-top-left duration-1000 ${gamepadOnline ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
+        className={`absolute left-[62.08%] top-[49.58%] h-14 w-14 origin-top-left duration-1000 lg:h-32 lg:w-32 ${gamepadOnline ? "scale-100 opacity-100" : "scale-50 opacity-0"}`}
       >
         <AxesGraphic y={gamepad?.axes[3] || 0} x={gamepad?.axes[2] || 0} />
       </div>

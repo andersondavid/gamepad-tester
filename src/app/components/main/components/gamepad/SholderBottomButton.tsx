@@ -10,14 +10,14 @@ export default function ShoulderBottomButton({ side, value }: PropTypes) {
     <div
       style={{ backgroundColor: `rgb(209 213 219/ ${value})` }}
       className={`
-      border-4
-    border-gray-300
-      w-[40%]
       h-[70%]
+      w-[40%]
+      rounded-bl-lg
+      rounded-br-3xl
       rounded-tl-3xl
       rounded-tr-3xl
-      rounded-br-3xl
-      rounded-bl-lg ${side == "left" ? "ml-auto -rotate-3" : "-scale-x-100 rotate-3"}`}
+      border-4
+      border-gray-300 ${side == "left" ? "ml-auto -rotate-3" : "rotate-3 -scale-x-100"}`}
     ></div>
   );
 }
