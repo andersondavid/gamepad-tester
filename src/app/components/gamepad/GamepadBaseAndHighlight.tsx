@@ -90,6 +90,19 @@ export function GamepadBaseAndHighlight() {
         alt="Gamepad for xbox"
         fill={true}
       />
+
+      <Image
+        className={`absolute ${bt[10]?.value ? "opacity-100" : "opacity-0"}`}
+        src={"/buttons_highlight/l.png"}
+        alt="Gamepad for xbox"
+        fill={true}
+      />
+      <Image
+        className={`absolute ${bt[11]?.value ? "opacity-100" : "opacity-0"}`}
+        src={"/buttons_highlight/r.png"}
+        alt="Gamepad for xbox"
+        fill={true}
+      />
     </div>
   );
 }
