@@ -13,7 +13,7 @@ export default function About() {
         </p>
       </div>
       <div className="m-auto py-4 text-right">
-        <button className="inline-block rounded-full border-2 border-orange-400 px-2 py-2 text-gray-200">
+        <a href="https://github.com/andersondavid/gamepad-tester" className="inline-block rounded-full border-2 border-orange-400 px-2 py-2 text-gray-200">
           <span className="px-2">GITHUB</span>
           <span>
             <Image
@@ -24,7 +24,7 @@ export default function About() {
               height="35"
             />
           </span>
-        </button>
+        </a>
       </div>
     </div>
   );
